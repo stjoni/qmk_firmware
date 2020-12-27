@@ -2,6 +2,23 @@
 
 #include "manna-harbour_miryoku.h"
 
+// combos
+enum combos {
+    num45_ESC,
+    num56_BSPC,
+    num6eql_ENT
+};
+
+const uint16_t PROGMEM num45_combo[]  = {KC_4, KC_5, COMBO_END};
+const uint16_t PROGMEM num56_combo[] = {KC_5, KC_6, COMBO_END};
+const uint16_t PROGMEM num6eql_combo[]  = {KC_6, KC_EQL, COMBO_END};
+
+combo_t key_combos[COMBO_COUNT] = {
+    [num45_ESC] = COMBO(num45_combo, KC_ESC),
+    [num56_BSPC] = COMBO(num56_combo, KC_BSPC),
+    [num6eql_ENT] = COMBO(num6eql_combo, KC_ENT)
+};
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 #if defined MIRYOKU_ALPHAS_COLEMAK
   [BASE] = LAYOUT_miryoku(

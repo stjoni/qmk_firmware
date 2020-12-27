@@ -19,6 +19,14 @@
 // Recommended for heavy chording.
 #define QMK_KEYS_PER_SCAN 4
 
+#define COMBO_COUNT 3
+
+// Redefine debounce time
+#ifdef DEBOUNCE
+#undef DEBOUNCE
+#endif
+#define DEBOUNCE 30
+
 // Mouse key speed and acceleration.
 #undef MOUSEKEY_DELAY
 #define MOUSEKEY_DELAY          0
